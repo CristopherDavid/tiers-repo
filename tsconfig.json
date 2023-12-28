@@ -3,7 +3,6 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
-    "lib": ["es2015"],
 
     "rootDir": "src",
     "outDir": "lib",
@@ -13,7 +12,6 @@
     "alwaysStrict": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
-    "strictPropertyInitialization": true,
 
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
@@ -25,10 +23,9 @@
 
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "downlevelIteration": true,
     "declaration": true,
 
     "pretty": true
   },
-  "include": ["typings/**/*", "src/**/*"]
+  "include": ["src/**/*"]
 }
