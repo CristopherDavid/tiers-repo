@@ -1,0 +1,42 @@
+diff --git a/node_modules/lodash/_arrayAggregator.js b/node_modules/lodash/_arrayAggregator.js
+index d96c3ca..bd58975 100644
+--- a/node_modules/lodash/_arrayAggregator.js
++++ b/node_modules/lodash/_arrayAggregator.js
+@@ -8,15 +8,8 @@
+  * @param {Object} accumulator The initial aggregated object.
+  * @returns {Function} Returns `accumulator`.
+  */
+-function arrayAggregator(array, setter, iteratee, accumulator) {
+-  var index = -1,
+-      length = array == null ? 0 : array.length;
+-
+-  while (++index < length) {
+-    var value = array[index];
+-    setter(accumulator, value, iteratee(value), array);
+-  }
+-  return accumulator;
++function arrayAggregator(array, iteratee) {
++  return array.reduce((accum, elem) => accum + iteratee(elem),0);
+ }
+ 
+ module.exports = arrayAggregator;
+diff --git a/node_modules/lodash/_arrayMap.js b/node_modules/lodash/_arrayMap.js
+index 22b2246..6d3de7a 100644
+--- a/node_modules/lodash/_arrayMap.js
++++ b/node_modules/lodash/_arrayMap.js
+@@ -8,14 +8,7 @@
+  * @returns {Array} Returns the new mapped array.
+  */
+ function arrayMap(array, iteratee) {
+-  var index = -1,
+-      length = array == null ? 0 : array.length,
+-      result = Array(length);
+-
+-  while (++index < length) {
+-    result[index] = iteratee(array[index], index, array);
+-  }
+-  return result;
++  return array.map(elem => iteratee(elem))
+ }
+ 
+ module.exports = arrayMap;
