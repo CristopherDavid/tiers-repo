@@ -1,0 +1,27 @@
+{
+  "name": "tiers-repo",
+  "version": "1.0.0",
+  "description": "Repo for demostration of T2 JS",
+  "main": "./lib/index.js",
+  "author": {
+    "name": "CristopherDavid",
+    "email": "evilcdmm@gmail.com"
+  },
+  "license": "MIT",
+  "private": false,
+  "dependencies": {},
+  "files": [
+    "./bin/*",
+    "./lib/*"
+  ],
+  "typings": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "tslint": "^6.1.3",
+    "typescript": "^5.3.3"
+  }
+}
